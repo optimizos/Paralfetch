@@ -33,7 +33,7 @@ Fast Application Launch on Personal Computing/Communication Devices
    pfault_trace                  : mmap'ed() tracing? (this value should be set to 1 if you want to trace page fault I/Os) <br />
    % Other parameters will be described soon. <br />
    
-# Simple use example
+# Simple example
   < learning phase > <br />
   $ pfsetmode -r /usr/bin/gimp-2.8 <br />
   $ /usr/bin/gimp-2.8 <br />
