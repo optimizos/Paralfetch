@@ -19,36 +19,35 @@ Fast Application Launch on Personal Computing/Communication Devices
 2. Change the mode of an application to prefetch phase
    1) for SSDs <br />
    $ pfsetmode -a <binary_file_path> <br />
-   or 2) for HDDs <br />
+   2) for HDDs <br />
    $ pfsetmode -s <binary_file_path> <br />
 
 # Parameter setting (/sys/kernel/debug/flashfetch)
-   flashfetch_monitor_timeout    : monitoring timeout (10s for SSDs, 30s for HDDs, by default)
-
-   io_infill_distance_allowed    : I/O distance threshold for the range merge
-   io_infill_hole_allowed_blks   : Infill threshold (for reading unneeded blocks) for the infill merge
-   metadata_shift_way            : Parallfetch supports two ways of shifting metadata (shifting by I/O counts (0) or size (1))
-   metadata_shift_value          : Shifting size
-   rotational                    : 0:SSD, 1:HDD (if you use multiple types of disks,
-                                             we recommend you to set this value to the disk type your system partition uses)
-   pfault_trace                  : mmap'ed() tracing? (this value should be set to 1 if you want to trace page fault I/Os)
-   % Other parameters will be described soon.
+   flashfetch_monitor_timeout    : monitoring timeout (10s for SSDs, 30s for HDDs, by default) <br />
+   io_infill_distance_allowed    : I/O distance threshold for the range merge <br />
+   io_infill_hole_allowed_blks   : Infill threshold (for reading unneeded blocks) for the infill merge <br />
+   metadata_shift_way            : Parallfetch supports two ways of shifting metadata (shifting by I/O counts (0) or size (1)) <br />
+   metadata_shift_value          : Shifting size <br />
+   rotational                    : 0:SSD, 1:HDD (if you use multiple types of disks, <br />
+                                             we recommend you to set this value to the disk type your system partition uses) <br />
+   pfault_trace                  : mmap'ed() tracing? (this value should be set to 1 if you want to trace page fault I/Os) <br />
+   % Other parameters will be described soon. <br />
    
 # Simple use example
-  < learning phase >
-  $ pfsetmode -r /usr/bin/gimp-2.8
-  $ /usr/bin/gimp-2.8
-  < wait 10 seconds > then gimp-2.8.pf is created in /flashfetch directory 
-  $ pfsetmode -a /usr/bin/gimp-2.8     (if you use HDD as a system disk, use '-s' instead of '-a')
-  $ /usr/bin/gimp-2.8
-  
-  % if you want to see scheduled prefetch entries
-    $ pfviewer /flashfetch/gimp-2.8.pf
-  % you need to evaluate performance of Parallfetch, invalidates disk caches to measure the launch time with parallfetch
-    (% echo 3 > /proc/sys/vm/drop_caches) as root permission
+  < learning phase > <br />
+  $ pfsetmode -r /usr/bin/gimp-2.8 <br />
+  $ /usr/bin/gimp-2.8 <br />
+  < wait 10 seconds > then gimp-2.8.pf is created in /flashfetch directory <br />
+  $ pfsetmode -a /usr/bin/gimp-2.8     (if you use HDD as a system disk, use '-s' instead of '-a') <br />
+  $ /usr/bin/gimp-2.8 <br />
+  <br />
+  % if you want to see scheduled prefetch entries <br />
+    $ pfviewer /flashfetch/gimp-2.8.pf <br />
+  % you need to evaluate performance of Parallfetch, invalidates disk caches to measure the launch time with parallfetch <br />
+    (% echo 3 > /proc/sys/vm/drop_caches) as root permission <br />
 
 # We uploaded the source code and document here for paper review.
-  We have a plan to upload more source code and detailed documentation here.
+  We have a plan to upload more source code and detailed documentation here. <br />
   1. Source code for Android, Raspberry Pi3, and Meego
   2. Source code for framework automation (e.g., with nautlius-actions package)
   3. Parallfetch for other kernel versions (we have developed Parallfetch from kernel 2.6.x)
