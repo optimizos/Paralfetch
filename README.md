@@ -6,9 +6,9 @@ Fast Application Launch on Personal Computing/Communication Devices
    1) Download kernel 4.12.9 (https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.12.9.tar.xz)
    2) Applying linux-4.12.9-pf.patch to the downloaded kernel
 3. Build utility
-   $ cd parallfetch_tools; make
-   $ mv pfsetmode pfviewer /usr/bin
-   $  sudo chmod u+s /usr/bin/pfsetmode
+   1) $ cd parallfetch_tools; make
+   2) $ mv pfsetmode pfviewer /usr/bin
+   3) $  sudo chmod u+s /usr/bin/pfsetmode
 4. creating prefetch file directory (for storing <app_name>.pf)
    $ sudo mkdir /flashfetch
    $ sudo chmod 777 /flashfetch
@@ -24,6 +24,7 @@ Fast Application Launch on Personal Computing/Communication Devices
 
 # Parameter setting (/sys/kernel/debug/flashfetch)
    flashfetch_monitor_timeout    : monitoring timeout (10s for SSDs, 30s for HDDs, by default)
+
    io_infill_distance_allowed    : I/O distance threshold for the range merge
    io_infill_hole_allowed_blks   : Infill threshold (for reading unneeded blocks) for the infill merge
    metadata_shift_way            : Parallfetch supports two ways of shifting metadata (shifting by I/O counts (0) or size (1))
