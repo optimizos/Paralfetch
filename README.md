@@ -10,17 +10,17 @@ Fast Application Launch on Personal Computing/Communication Devices
    2) $ mv pfsetmode pfviewer /usr/bin
    3) $  sudo chmod u+s /usr/bin/pfsetmode
 4. creating prefetch file directory (for storing <app_name>.pf)
-   $ sudo mkdir /flashfetch
-   $ sudo chmod 777 /flashfetch
+   $ sudo mkdir /flashfetch <br />
+   $ sudo chmod 777 /flashfetch <br />
    
 # How to use pfsetmode
 1. Creating <app_name>.pf (learning phase)
-   $ pfsetmode -r <binary_file_path>
+   $ pfsetmode -r <binary_file_path> <br />
 2. Change the mode of an application to prefetch phase
-   1) for SSDs
-   $ pfsetmode -a <binary_file_path>
-   or 2) for HDDs
-   $ pfsetmode -s <binary_file_path>
+   1) for SSDs <br />
+   $ pfsetmode -a <binary_file_path> <br />
+   or 2) for HDDs <br />
+   $ pfsetmode -s <binary_file_path> <br />
 
 # Parameter setting (/sys/kernel/debug/flashfetch)
    flashfetch_monitor_timeout    : monitoring timeout (10s for SSDs, 30s for HDDs, by default)
