@@ -52,3 +52,9 @@ Fast Application Launch on Personal Computing/Communication Devices
   1. Source code for Android, Raspberry Pi3, and Meego
   2. Source code for framework automation (e.g., with nautlius-actions package)
   3. Parallfetch for other kernel versions (we have developed Parallfetch from kernel 2.6.x)
+  
+# Important notice
+  % Attached patch file includes modified code for testing GSoC prefetch and page descriptor level monitoring, which are not documented or commented well <br />
+  % Parallfetch do not use any page descriptor level monitoring/handling <br />
+  % FAST supports only ext3 file system, and thus performance comparison with FAST was conducted on ext3 file system. Parallfetch supports all kinds of ext file system family (Only metadata detection codes are different) <br />
+  % Supporting nilfs, f2fs is under testing
