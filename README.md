@@ -27,7 +27,7 @@ Fast Application Launch on Personal Computing/Communication Devices
    flashfetch_monitor_timeout    : monitoring timeout (10s for SSDs, 30s for HDDs, by default) <br />
    io_infill_distance_allowed    : I/O distance threshold for the range merge <br />
    io_infill_hole_allowed_blks   : Infill threshold (for reading unneeded blocks) for the infill merge <br />
-   metadata_shift_way            : Parallfetch supports two ways of shifting metadata (shifting by I/O counts (0) or size (1)) <br />
+   metadata_shift_way            : paralfetch supports two ways of shifting metadata (shifting by I/O counts (0) or size (1)) <br />
    metadata_shift_value          : Shifting size <br />
    rotational                    : 0:SSD, 1:HDD (if you use multiple types of disks, <br />
                                              we recommend you to set this value to the disk type your system partition uses) <br />
@@ -44,16 +44,16 @@ Fast Application Launch on Personal Computing/Communication Devices
   <br />
   % if you want to see scheduled prefetch entries <br />
     $ pfviewer /flashfetch/gimp-2.8.pf <br />
-  % you need to evaluate performance of Parallfetch, invalidates disk caches to measure the launch time with parallfetch <br />
+  % you need to evaluate performance of paralfetch, invalidates disk caches to measure the launch time with paralfetch <br />
     (% echo 3 > /proc/sys/vm/drop_caches) as root permission <br />
 
 # We uploaded the source code and document here for paper review.
   We have a plan to upload more source code and detailed documentation here. <br />
-  1. Source code for Android, Raspberry Pi3, and Meego
+  1. Source code for Android, Raspberry Pi 3, and Meego
   2. Source code for framework automation (e.g., with nautlius-actions package)
-  3. Parallfetch for other kernel versions (we have developed Parallfetch from kernel 2.6.x)
+
   
 # Important notice
-  % Attached patch file includes modified code for testing GSoC prefetch and page descriptor level monitoring, which are not relevant to Parallfetch (these codes are not documented or commented well) <br />
-  % FAST supports only ext3 file system, and thus performance comparison with FAST was conducted on ext3 file system. Parallfetch supports all kinds of ext file system family (Only metadata detection codes are different) <br />
+  % Attached patch file includes modified code for testing GSoC prefetch and page descriptor level monitoring, which are not relevant to paralfetch (these codes are not documented or commented well) <br />
+  % FAST supports only ext3 file system, and thus performance comparison with FAST was conducted on ext3 file system. paralfetch supports all kinds of ext file system family (Only metadata detection codes are different) <br />
   % Supporting nilfs, f2fs is under testing
