@@ -1,4 +1,4 @@
-# parallfetch
+# paralfetch
 Fast Application Launch on Personal Computing/Communication Devices
 
 # Install steps
